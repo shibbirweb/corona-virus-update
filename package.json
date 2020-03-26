@@ -1,14 +1,23 @@
 {
-  "name": "corona_live_stat",
+  "name": "corona_virus_live_stats_by_shibbir_ahmed",
+  "description": "API based Corona Virus Update",
   "version": "0.1.0",
   "private": true,
+  "author": "MD. Shibbir Ahmed <shibbirweb@gmail.com> (http://shibbir.me/)",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "core-js": "^3.6.4",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
@@ -38,5 +47,19 @@
       "vue-cli-service lint",
       "git add"
     ]
+  },
+  "homepage": "https://github.com/shibbirweb/corona-virus-update#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shibbirweb/corona-virus-update.git"
+  },
+  "keywords": [
+    "Corona Virus",
+    "Coronavirus"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shibbirweb/corona-virus-update/issues",
+    "email": "shibbirweb@gmail.com"
   }
 }
