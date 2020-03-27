@@ -15,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "chart.js": "^2.9.3",
     "core-js": "^3.6.4",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
