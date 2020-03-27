@@ -1,4 +1,5 @@
 export default {
+  // search country
   getterSearchCountry: state => searchName => {
     if (searchName.length === 0) {
       return state.countryWiseData;
@@ -8,7 +9,14 @@ export default {
       });
     }
   },
+  // Bangladesh statistics summary
   getterBangladeshStatistics: state => {
     return state.countryWiseData.find(data => data.country === "Bangladesh");
+  },
+  // specific country wise history
+  getterSpecificCountryHistory: state => countryName => {
+    return state.countryWiseHistories.find(
+      data => data.country === countryName
+    );
   }
 };

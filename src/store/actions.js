@@ -1,4 +1,4 @@
-import { apiV1URL } from "../api";
+import { apiV1URL, apiV2URL } from "../api";
 import axios from "axios";
 export default {
   // load global statistics
@@ -19,11 +19,22 @@ export default {
       axios
         .get(apiV1URL + "countries")
         .then(response => {
-          console.log(response.data);
           commit("mutationLoadCountryWiseStatistics", response.data);
           resolve(response.data);
         })
         .catch(reason => reject(reason));
+    });
+  },
+  // load bangladesh corona virus history
+  actionLoadSpecificCountryCoronaVirusHistory({ commit }, { country }) {
+    return new Promise((resolve, reject) => {
+      axios
+        .get(apiV2URL + "historical/" + country)
+        .then(response => {
+          commit("mutationLoadCountryWiseHistory", response.data);
+          resolve(response);
+        })
+        .catch(error => reject(error));
     });
   }
 };
