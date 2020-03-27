@@ -1,0 +1,20 @@
+{
+  "country": "Bangladesh",
+  "countryInfo": {
+    "_id": 50,
+    "lat": 24,
+    "long": 90,
+    "flag": "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/bd.png",
+    "iso3": "BGD",
+    "iso2": "BD"
+  },
+  "cases": 48,
+  "todayCases": 4,
+  "deaths": 5,
+  "todayDeaths": 0,
+  "recovered": 11,
+  "active": 32,
+  "critical": 1,
+  "casesPerOneMillion": 0.3,
+  "deathsPerOneMillion": 0.03
+}
