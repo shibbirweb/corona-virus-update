@@ -19,6 +19,7 @@ export default {
 
 <style scoped lang="scss">
 .bangladesh-stats {
+  background-color: #003d6e;
   background-image: url("../assets/images/bangladesh-background.jpg");
   background-size: cover;
 }

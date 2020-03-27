@@ -25,6 +25,7 @@ export default {
 
 <style scoped lang="scss">
 .global-stats {
+  background-color: #001d1b;
   background-image: url("../assets/images/world-background.jpg");
   background-size: cover;
 }
