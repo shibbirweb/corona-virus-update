@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Global from "../views/Global";
 import Bangladesh from "../views/Bangladesh";
+import CountryWiseDetails from "../views/CountryWiseDetails";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,14 @@ const routes = [
     component: Global,
     meta: {
       title: "Global Corona Virus Update | Shibbir Ahmed"
+    }
+  },
+  {
+    path: "/global/:countryName",
+    name: "dynamicRegion",
+    component: CountryWiseDetails,
+    meta: {
+      title: "Country Details | Shibbir Ahmed"
     }
   },
   {

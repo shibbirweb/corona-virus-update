@@ -8,6 +8,7 @@
       />
       <div class="card-body">
         <h5 class="card-title">{{ data.country }}</h5>
+
         <ul class="list-group list-group-flush">
           <li class="list-group-item px-0">
             Cases:
@@ -54,6 +55,17 @@
             }}</span>
           </li>
         </ul>
+      </div>
+      <div class="card-footer">
+        <router-link
+          class="btn btn-block btn-sm btn-outline-info"
+          target="_blank"
+          :to="{
+            name: 'dynamicRegion',
+            params: { countryName: data.country }
+          }"
+          >View Details</router-link
+        >
       </div>
     </div>
   </div>

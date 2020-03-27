@@ -3,7 +3,7 @@
     <div class="bangladesh-stats py-2">
       <div class="container">
         <!-- Bangladesh Statistics -->
-        <bangladesh-stats-component />
+        <country-stats-component country-name="Bangladesh" />
       </div>
     </div>
 
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import BangladeshStatsComponent from "../components/BangladeshStatsComponent";
+import CountryStatsComponent from "../components/CountryStatsComponent";
 import CountryHistoryChartComponent from "../components/CountryHistoryChartComponent";
 export default {
   name: "Bangladesh",
   components: {
     CountryHistoryChartComponent,
-    BangladeshStatsComponent
+    CountryStatsComponent
   }
 };
 </script>

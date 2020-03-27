@@ -3,13 +3,9 @@
     <div class="col-md-8 offset-md-2">
       <div class="card" style="background-color:rgba(255,255,255,0.86);">
         <div class="card-header text-center">
-          Bangladesh Statistics
+          {{ countryName }} Statistics
           <div class="small text-black">
             Last Update:
-            <!--<pre>
-              {{ bangladeshStatistics }}
-          </pre
-            >-->
             {{ formatLastUpdate(globalStatistics.updated) || "Loading" }}
           </div>
         </div>
@@ -21,7 +17,7 @@
                 Total cases:
               </div>
               <h2 class="display-4 font-weight-bolder text-center text-primary">
-                {{ formatNumber(bangladeshStatistics.cases) || "Loading" }}
+                {{ formatNumber(countryStatistics.cases) || "Loading" }}
               </h2>
             </div>
             <div class="col-md-6">
@@ -29,7 +25,7 @@
                 New cases:
               </div>
               <h2 class="display-4 font-weight-bolder text-center text-info">
-                {{ formatNumber(bangladeshStatistics.todayCases) || "Loading" }}
+                {{ formatNumber(countryStatistics.todayCases) || "Loading" }}
               </h2>
             </div>
             <div class="col-md-6">
@@ -37,7 +33,7 @@
                 Deaths:
               </div>
               <h2 class="display-4 font-weight-bolder text-center text-danger">
-                {{ formatNumber(bangladeshStatistics.deaths) || "Loading" }}
+                {{ formatNumber(countryStatistics.deaths) || "Loading" }}
               </h2>
             </div>
             <div class="col-md-6">
@@ -49,14 +45,10 @@
                   'display-4',
                   'font-weight-bolder',
                   'text-center',
-                  bangladeshStatistics.todayDeaths
-                    ? 'text-danger'
-                    : 'text-success'
+                  countryStatistics.todayDeaths ? 'text-danger' : 'text-success'
                 ]"
               >
-                {{
-                  formatNumber(bangladeshStatistics.todayDeaths) || "Loading"
-                }}
+                {{ formatNumber(countryStatistics.todayDeaths) || "Loading" }}
               </h2>
             </div>
             <div class="col-md-12">
@@ -64,7 +56,7 @@
                 Recovered:
               </div>
               <h2 class="display-4 font-weight-bolder text-center text-success">
-                {{ formatNumber(bangladeshStatistics.recovered) || "Loading" }}
+                {{ formatNumber(countryStatistics.recovered) || "Loading" }}
               </h2>
             </div>
           </div>
@@ -78,13 +70,19 @@
 import { mapGetters, mapActions, mapState } from "vuex";
 import PreloaderComponent from "./PreloaderComponent";
 export default {
-  name: "BangladeshStatsComponent",
+  name: "CountryStatsComponent",
   components: { PreloaderComponent },
+  props: {
+    countryName: {
+      type: String,
+      required: true
+    }
+  },
   computed: {
     ...mapState(["globalStatistics"]),
-    ...mapGetters(["getterBangladeshStatistics"]),
-    bangladeshStatistics() {
-      return this.getterBangladeshStatistics || {};
+    ...mapGetters(["getterCountryStatistics"]),
+    countryStatistics() {
+      return this.getterCountryStatistics(this.countryName) || {};
     }
   },
   data() {
@@ -105,10 +103,10 @@ export default {
         .then(() => (this.preloader = false))
         .catch(() => this.loadCountryWiseStats());
     },
-    loadDataForBangladeshStats() {
+    loadDataForCountryStats() {
       // load global statistics
       this.actionLoadGlobalStatistics().catch(() =>
-        this.loadDataForBangladeshStats()
+        this.loadDataForCountryStats()
       );
 
       // load country wise statistics
@@ -131,7 +129,7 @@ export default {
     }
   },
   mounted() {
-    this.loadDataForBangladeshStats();
+    this.loadDataForCountryStats();
   }
 };
 </script>

@@ -9,9 +9,9 @@ export default {
       });
     }
   },
-  // Bangladesh statistics summary
-  getterBangladeshStatistics: state => {
-    return state.countryWiseData.find(data => data.country === "Bangladesh");
+  // country statistics summary
+  getterCountryStatistics: state => countryName => {
+    return state.countryWiseData.find(data => data.country === countryName);
   },
   // specific country wise history
   getterSpecificCountryHistory: state => countryName => {

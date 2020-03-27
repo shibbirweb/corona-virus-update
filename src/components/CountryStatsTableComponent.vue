@@ -42,13 +42,22 @@
           <tr v-else v-for="(data, index) in countryWiseData" :key="index">
             <td>{{ index + 1 }}</td>
             <td>
-              <!--<img
-              :src="data.countryInfo.flag"
-              class="rounded"
-              width="25"
-              :alt="data.country"
-            />-->
-              {{ data.country }} ({{ data.countryInfo.iso3 }})
+              <router-link
+                target="_blank"
+                :to="{
+                  name: 'dynamicRegion',
+                  params: { countryName: data.country }
+                }"
+                class="text-decoration-none"
+              >
+                <img
+                  :src="data.countryInfo.flag"
+                  class="rounded"
+                  width="25"
+                  :alt="data.country"
+                />
+                {{ data.country }} ({{ data.countryInfo.iso3 }})
+              </router-link>
             </td>
             <td>{{ data.cases }}</td>
             <td :class="[data.todayCases > 0 ? 'bg-info text-white' : '']">
