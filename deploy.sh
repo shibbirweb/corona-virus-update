@@ -16,7 +16,7 @@ mv dist docs
 git add -A
 
 # commit deploy with no lint fix
-git commit -m 'deploy' --no-verify
+git commit -m 'updated live version' --no-verify
 
 # push to git master branch
 git push -u origin master
