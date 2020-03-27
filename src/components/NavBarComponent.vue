@@ -19,10 +19,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <router-link
-            to="/"
+            :to="{ name: 'global' }"
             class="nav-item"
             tag="li"
-            exact-active-class="active"
+            active-class="active"
           >
             <a class="nav-link">Global</a>
           </router-link>
