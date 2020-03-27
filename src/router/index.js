@@ -8,7 +8,16 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
+    component: Global,
+    redirect: { name: "global" },
+    meta: {
+      title: "Corona Virus Update | Shibbir Ahmed"
+    }
+  },
+  {
+    path: "/global",
+    name: "global",
     component: Global,
     meta: {
       title: "Global Corona Virus Update | Shibbir Ahmed"
