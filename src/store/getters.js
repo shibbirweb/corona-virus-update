@@ -7,5 +7,8 @@ export default {
         return report.country.toLowerCase().includes(searchName.toLowerCase());
       });
     }
+  },
+  getterBangladeshStatistics: state => {
+    return state.countryWiseData.find(data => data.country === "Bangladesh");
   }
 };

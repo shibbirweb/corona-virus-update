@@ -82,7 +82,7 @@ export default {
         return null; // if date empty or null then return null
       }
     },
-    formatCount(value) {
+    formatCount: function(value) {
       try {
         return value.toLocaleString();
       } catch (e) {

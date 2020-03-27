@@ -32,7 +32,7 @@
     </div>
     <div class="card-body position-relative">
       <keep-alive>
-        <component :is="CountryWiseStatDynamicComponent" />
+        <component :is="countryStatsViewType" />
       </keep-alive>
     </div>
   </div>
@@ -49,7 +49,7 @@ export default {
     CountryStatsTableComponent
   },
   computed: {
-    CountryWiseStatDynamicComponent() {
+    countryStatsViewType() {
       if (this.viewType === "list") {
         return CountryStatsTableComponent;
       } else if (this.viewType === "grid") {
